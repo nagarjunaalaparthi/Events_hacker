@@ -73,12 +73,22 @@
             android:visibility="gone" />
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/totalevents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_layout"
+        android:padding="@dimen/default_margin"
+        android:text="@string/total_events"
+        android:textColor="@color/colorPrimary" />
+
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/refreshlayout"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/bottom_layout"
-        android:layout_below="@+id/search_layout"
-        android:layout_height="wrap_content">
+        android:layout_below="@+id/totalevents">
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"

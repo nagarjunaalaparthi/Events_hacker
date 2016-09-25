@@ -45,6 +45,7 @@ public class MainActivity extends BaseActivity {
     private EventsList eventList;
     private ImageView favourite;
     private SwipeRefreshLayout refreshLayout;
+    private TextView totalItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +77,7 @@ public class MainActivity extends BaseActivity {
                 initializeObjects();
             }
         });
-
+        totalItems = (TextView) findViewById(R.id.totalevents);
     }
 
     @Override
@@ -179,6 +180,7 @@ public class MainActivity extends BaseActivity {
                     }
                 }
             }
+            totalItems.setText(getString(R.string.total_events)+" "+events.size());
             adapter = new EventAdapter(events, getApplicationContext());
             eventRecyclerView.setAdapter(adapter);
             double diff = (Double.parseDouble(eventList.getQuoteMax()) - Double.parseDouble(eventList.getQuoteAvailable()));
@@ -217,6 +219,7 @@ public class MainActivity extends BaseActivity {
         if(events!=null){
             sortedEvents = events;
             Collections.sort(sortedEvents,new CategoryComparator());
+            totalItems.setText(getString(R.string.total_events)+" "+sortedEvents.size());
             adapter = new EventAdapter(sortedEvents,getApplicationContext());
             eventRecyclerView.setAdapter(adapter);
         }
@@ -252,6 +255,7 @@ public class MainActivity extends BaseActivity {
         if(events!=null){
             sortedEvents = events;
             Collections.sort(sortedEvents,new FavouriteComparator());
+            totalItems.setText(getString(R.string.total_events)+" "+sortedEvents.size());
             adapter = new EventAdapter(sortedEvents,getApplicationContext());
             eventRecyclerView.setAdapter(adapter);
         }
@@ -267,6 +271,7 @@ public class MainActivity extends BaseActivity {
                     searchedEvents.add(event);
                 }
             }
+            totalItems.setText(getString(R.string.total_events)+" "+searchedEvents.size());
             adapter = new EventAdapter(searchedEvents, getApplicationContext());
             eventRecyclerView.setAdapter(adapter);
             if (searchedEvents.size() == 0) {

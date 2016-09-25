@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import com.events.Model.Event;
 
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 
 public class FavouritesActivity extends BaseActivity {
     private RecyclerView eventRecyclerView;
+    private TextView totalItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class FavouritesActivity extends BaseActivity {
         eventRecyclerView.setLayoutManager(manager);
         RecyclerView.ItemAnimator animator = new DefaultItemAnimator();
         eventRecyclerView.setItemAnimator(animator);
+        totalItems = (TextView) findViewById(R.id.totalevents);
     }
 
     private void initObjects(){
@@ -41,6 +44,7 @@ public class FavouritesActivity extends BaseActivity {
 
     public void setAdapter() {
         ArrayList<Event> favouriteEvents = helper.getEvents();
+        totalItems.setText(getString(R.string.total_events)+" "+favouriteEvents.size());
         EventAdapter adapter = new EventAdapter(favouriteEvents,this);
         eventRecyclerView.setAdapter(adapter);
     }
