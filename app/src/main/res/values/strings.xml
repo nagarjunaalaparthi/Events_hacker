@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Events</string>
+    <string name="search_hint">Search (by name or category)</string>
+    <string name="sortby">sort by</string>
+    <string name="api_quota">API Quota:</string>
+    <string name="favourites">Favourites</string>
+    <string name="back">Back</string>
+    <string name="share">Share</string>
+    <string name="category">Category</string>
+    <string name="statistics">Stats</string>
+</resources>

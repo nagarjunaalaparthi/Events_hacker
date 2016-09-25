@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/dialogue_margin"
+    android:gravity="center"
+    android:background="@drawable/dialogue_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/sortbby"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/dialogue_margin"
+        android:text="@string/sortby"
+        android:textColor="@color/textcolordark"
+        android:textSize="@dimen/default_text_size" />
+
+    <TextView
+        android:id="@+id/favourite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/dialogue_margin"
+        android:text="@string/favourites"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/default_text_size" />
+
+    <View
+        android:id="@+id/seperator"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/description"
+        android:background="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seperator"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/dialogue_margin"
+        android:text="@string/category"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/default_text_size" />
+</LinearLayout>

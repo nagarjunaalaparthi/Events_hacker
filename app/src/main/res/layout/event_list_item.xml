@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/default_margin"
+    android:id="@+id/eventlayout"
+    android:background="@drawable/search_background"
+    android:orientation="vertical"
+    android:padding="@dimen/default_margin">
+
+    <ImageView
+        android:id="@+id/event_image"
+        android:layout_width="@dimen/image_height"
+        android:layout_height="@dimen/image_height"
+        android:background="@drawable/placeholder"
+        android:contentDescription="@string/app_name" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignBaseline="@+id/event_image"
+        android:layout_alignBottom="@+id/event_image"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_toLeftOf="@+id/favourite"
+        android:layout_toRightOf="@+id/event_image"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/search_text_size" />
+
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/search_text_size" />
+
+        <TextView
+            android:id="@+id/ecperience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/search_text_size" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/favourite"
+        android:layout_width="@dimen/default_button_height"
+        android:layout_height="@dimen/default_button_height"
+        android:padding="@dimen/default_margin"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/star"
+        android:tint="@color/colorPrimary" />
+</RelativeLayout>
